@@ -92,12 +92,32 @@ public class ArrayListMethods {
 
     }
 
+    public static void guess(ArrayList<Integer> list){
+        for(int i = 0; i < list.size(); i++){
+            if(i / 3 > 0)
+                list.set(0, list.get(i));
+            else
+                list.set(1, list.get(i));
+            System.out.println(i + " " + list);
+        }
+
+    }
+
+
 
     public static void main(String[] args) {
-        System.out.println(numberList());
+        //System.out.println(numberList());
         //System.out.println(firstAndLast());
         //ArrayList<Double> myList = getNumbers();
         //System.out.println(arrangeList(myList));
+        ArrayList<Integer> test = new ArrayList<>();
+        test.add(5);
+        test.add(4);
+        test.add(9);
+        test.add(11);
+        test.add(24);
+        test.add(65);
+        guess(test);
 
 
     }
