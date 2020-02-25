@@ -46,8 +46,49 @@ public class Algorithms {
 
         System.out.println(ogNames);
 
-        boolean isDupe = false;
+        names.add(ogNames.get(0));
+
+        for (String name: ogNames) {
+            boolean found = false;
+            for (int i=0; i<names.size(); i++){
+                if (name.equals(names.get(i))) {
+                    found = true;
+                    break;
+                }
+
+            }
+            if (!found) {
+                names.add(name);
+            }
+        }
 
         return names;
+    }
+
+    public static ArrayList<Integer> orderedList() throws IOException {
+        Scanner f = new Scanner(new File("file1.txt"));
+        ArrayList<Integer> ordered = new ArrayList<>();
+        while (f.hasNext()) {
+            Integer currentNumber = f.nextInt();
+            if (ordered.size()==0) {
+                ordered.add(currentNumber);
+            } else {
+                boolean added = false;
+                for (int i=0; i<ordered.size(); i++) {
+                    if (currentNumber < ordered.get(i)) {
+                        ordered.add(i, currentNumber);
+                        added = true;
+                        break;
+                    }
+                }
+                if (!added) {
+                    ordered.add(currentNumber);
+                }
+
+            }
+
+        }
+
+        return ordered;
     }
 }
