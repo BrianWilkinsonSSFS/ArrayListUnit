@@ -29,6 +29,8 @@ public class Donor {
         this.name = name;
     }
 
+
+
     @Override
     public String toString() {
         return this.name + " gave $" + this.amount;
@@ -41,6 +43,21 @@ public class Donor {
             Donor nextDonor = new Donor(scan.next(), scan.nextDouble());
             donors.add(nextDonor);
         }
+        sortDonors(donors);
+        System.out.println(donors);
 
+    }
+
+    public static void sortDonors(ArrayList<Donor> donors) {
+
+        for (int i=1; i<donors.size(); i++) {
+            Donor testing = donors.get(i);
+            for (int j=0; j<i; j++) {
+                if (testing.amount > donors.get(i).amount) {
+                    donors.remove(i);
+                    donors.add(j,testing);
+                }
+            }
+        }
     }
 }
