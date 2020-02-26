@@ -3,6 +3,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 import static org.junit.Assert.*;
 
@@ -12,13 +13,19 @@ public class AlgorithmsTest {
     public void fileDuplicates() throws IOException {
 
         ArrayList<Integer> myList = new ArrayList<Integer>(Arrays.asList(75, 20, 10, 39, 28, 17, 55));
-        assertEquals(myList, Algorithms.fileDuplicates());
+        Collections.sort(myList);
+        ArrayList<Integer> fromStudent =  Algorithms.fileDuplicates();
+        Collections.sort(fromStudent);
+        assertEquals(myList, fromStudent);
     }
 
     @Test
     public void duplicateNames() throws IOException {
         ArrayList<String> myList = new ArrayList<String>(Arrays.asList("Emma", "Olivia", "Oliver", "Noah", "Isabella", "Sophia", "Charlotte", "Mia", "Amelia", "Harper", "Evelyn", "Liam", "William", "James", "Benjamin", "Elijah", "Lucas", "Mason", "Logan"));
-        assertEquals(myList, Algorithms.fileDuplicatesTwo());
+        Collections.sort(myList);
+        ArrayList<String> fromStudent =  Algorithms.fileDuplicatesTwo();
+        Collections.sort(fromStudent);
+        assertEquals(myList, fromStudent);
     }
 
     @Test

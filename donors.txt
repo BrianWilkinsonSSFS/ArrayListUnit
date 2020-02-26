@@ -1,0 +1,9 @@
+Maria 125.0
+Isaac 105.75
+Jane 98.5
+Matsu 61.99
+Susan 50.0
+Carl 45.25
+Tiffany 38.0
+Sam 25.0
+Alonzo 18.65
